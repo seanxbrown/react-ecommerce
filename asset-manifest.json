@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/seanxbrown.github.io/react-ecommerce/static/css/main.073c9b0a.css",
-    "main.js": "/seanxbrown.github.io/react-ecommerce/static/js/main.da9ece3f.js",
-    "static/js/787.c875205c.chunk.js": "/seanxbrown.github.io/react-ecommerce/static/js/787.c875205c.chunk.js",
-    "static/media/logo.svg": "/seanxbrown.github.io/react-ecommerce/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/seanxbrown.github.io/react-ecommerce/index.html",
-    "main.073c9b0a.css.map": "/seanxbrown.github.io/react-ecommerce/static/css/main.073c9b0a.css.map",
-    "main.da9ece3f.js.map": "/seanxbrown.github.io/react-ecommerce/static/js/main.da9ece3f.js.map",
-    "787.c875205c.chunk.js.map": "/seanxbrown.github.io/react-ecommerce/static/js/787.c875205c.chunk.js.map"
+    "main.css": "/react-ecommerce/static/css/main.073c9b0a.css",
+    "main.js": "/react-ecommerce/static/js/main.c5226be9.js",
+    "static/js/787.c875205c.chunk.js": "/react-ecommerce/static/js/787.c875205c.chunk.js",
+    "static/media/logo.svg": "/react-ecommerce/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/react-ecommerce/index.html",
+    "main.073c9b0a.css.map": "/react-ecommerce/static/css/main.073c9b0a.css.map",
+    "main.c5226be9.js.map": "/react-ecommerce/static/js/main.c5226be9.js.map",
+    "787.c875205c.chunk.js.map": "/react-ecommerce/static/js/787.c875205c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.da9ece3f.js"
+    "static/js/main.c5226be9.js"
   ]
 }

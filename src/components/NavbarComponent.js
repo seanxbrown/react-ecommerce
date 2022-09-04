@@ -12,9 +12,10 @@ export const NavbarComponent = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                     <Link className="nav-link text-light" to="/react-ecommerce/about">About</Link>
-                    <Link className="nav-link text-light" to="/react-ecommerce/locations">Locations</Link>
+                    <Link className="nav-link text-light" to="/react-ecommerce/shop">Shop</Link>
                     <Link className="nav-link text-light" to="/react-ecommerce/contact">Contact</Link>
                     </Nav>
+                    <Navbar.Text href="#" className="text-end text-light mx-4">Basket</Navbar.Text>
                     <Navbar.Text href="#" className="text-end text-light">Checkout</Navbar.Text>
                 </Navbar.Collapse>
             </Container>

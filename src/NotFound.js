@@ -1,13 +1,13 @@
 import NavbarComponent from "./components/NavbarComponent"
 
-const Locations = () => {
+const NotFound = () => {
     return (
         <div>
             <NavbarComponent></NavbarComponent>
-            <h1>Locations</h1>
+            <h1>404 - Page not found</h1>
 
         </div>
     )
 }
 
-export default Locations
+export default NotFound

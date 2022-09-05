@@ -5,14 +5,8 @@ import Container from "react-bootstrap/Container";
 import { useState } from "react";
 
 
-const Shop = () => {
-    const [basket, setBasket] = useState([]);
+const Shop = ({addToBasket, products}) => {
     
-    function addToBasket() {
-        setBasket(basket.concat({test: "obj"}))
-    }
-
-
 
     return (
         <div>
@@ -21,7 +15,7 @@ const Shop = () => {
                     <h2 className="text-center">Shop with us</h2>
                 </header>
                 <section id="products-grid">
-                    <ProductsComponent addToBasket={addToBasket}></ProductsComponent>
+                    <ProductsComponent addToBasket={addToBasket} products={products}></ProductsComponent>
                 </section>
             </Container>
         </div>

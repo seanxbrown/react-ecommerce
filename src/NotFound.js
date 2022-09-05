@@ -1,5 +1,3 @@
-import NavbarComponent from "./components/NavbarComponent"
-
 const NotFound = () => {
     return (
         <div>

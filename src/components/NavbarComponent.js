@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import {Link} from "react-router-dom";
 
-export const NavbarComponent = () => {
+export const NavbarComponent = ({numberOfItems}) => {
     return (
         <Navbar bg="dark" expand="lg" sticky="top">
             <Container>

@@ -7,7 +7,6 @@ import Card from "react-bootstrap/Card";
 const Contact = () => {
     return (
         <div>
-            <NavbarComponent></NavbarComponent>
             <Container fluid>
                 <section>
                     <Container>
@@ -51,8 +50,6 @@ const Contact = () => {
                     </Container>
                 </section>
             </Container>
-
-
         </div>
     )
 }

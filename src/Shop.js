@@ -10,7 +10,7 @@ const Shop = ({addToBasket, products}) => {
 
     return (
         <div>
-            <Container>
+            <Container className="p-5">
                 <header>
                     <h2 className="text-center">Shop with us</h2>
                 </header>

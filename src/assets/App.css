@@ -10,3 +10,13 @@
     color: #fff;
     font-weight: bold;
 }
+
+.product-image {
+    display: block;
+    max-width: 40%;
+    margin: 0 auto;
+}
+
+.product-description {
+    font-size: 0.8rem;
+}

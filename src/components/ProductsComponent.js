@@ -7,7 +7,7 @@ const ProductsComponent = ({addToBasket, products}) => {
 
 
     return (
-        <Row md={6} className="p-5">
+        <Row md={2} className="p-5 g-3">
             {products.map(productFromState => {
                 return <Product product={productFromState} addToBasket={addToBasket}></Product>
             })}

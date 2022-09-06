@@ -23,13 +23,16 @@ function App() {
 
       //If the product is not in the basket, add it
 
+
       if(!basket.includes(productToAddToBasket)) {
         productToAddToBasket.quantity = 1;
+
         const newBasket = [...basket].concat(productToAddToBasket);
         setBasket(newBasket)
       } else {
         const newBasket = [...basket];
           for (let product of newBasket) {
+            if (product.id === productToAddToBasket.id)
             product.quantity = product.quantity + 1
         }
         setBasket(newBasket)
@@ -50,7 +53,7 @@ function App() {
     }, [])
   return (
     <BrowserRouter>
-      <NavbarComponent numberOfItems={basket.length}></NavbarComponent>
+      <NavbarComponent basket={basket}></NavbarComponent>
       <Routes>
         <Route path="/react-ecommerce" element={<Home />} />
         <Route path="/react-ecommerce/about" element={<About />} />

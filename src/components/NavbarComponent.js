@@ -2,8 +2,12 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react"
 
-export const NavbarComponent = ({numberOfItems}) => {
+export const NavbarComponent = ({basket}) => {
+    const [numberOfItems, setNumberOfItems] = useState(0)
+
+
     return (
         <Navbar bg="dark" expand="lg" sticky="top">
             <Container>
@@ -15,7 +19,7 @@ export const NavbarComponent = ({numberOfItems}) => {
                     <Link className="nav-link text-light" to="/react-ecommerce/shop">Shop</Link>
                     <Link className="nav-link text-light" to="/react-ecommerce/contact">Contact</Link>
                     </Nav>
-                    <Navbar.Text href="#" className="text-end text-light mx-4">Basket {numberOfItems > 0 && `(${numberOfItems})`}</Navbar.Text>
+                    <Navbar.Text href="#" className="text-end text-light mx-4">Basket {basket.length > 0 && `()`}</Navbar.Text>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

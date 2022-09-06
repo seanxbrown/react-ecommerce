@@ -9,7 +9,7 @@ const ProductsComponent = ({addToBasket, products}) => {
     return (
         <Row md={2} className="p-5 g-3">
             {products.map(productFromState => {
-                return <Product product={productFromState} addToBasket={addToBasket}></Product>
+                return <Product key={Math.random() * 100000} product={productFromState} addToBasket={addToBasket}></Product>
             })}
         </Row>
     )

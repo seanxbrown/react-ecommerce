@@ -17,8 +17,24 @@ function App() {
   const [products, setProducts] = useState([])
 
     
-    function addToBasket() {
-        setProducts(basket.concat({test: "obj"}))
+    function addToBasket(e) {
+      const productSelectedInShop = e.target.parentElement.id;
+      const productToAddToBasket = products.filter(product => product.id === Number(productSelectedInShop))[0];
+
+      //If the product is not in the basket, add it
+
+      if(!basket.includes(productToAddToBasket)) {
+        productToAddToBasket.quantity = 1;
+        const newBasket = [...basket].concat(productToAddToBasket);
+        setBasket(newBasket)
+      } else {
+        const newBasket = [...basket];
+          for (let product of newBasket) {
+            product.quantity = product.quantity + 1
+        }
+        setBasket(newBasket)
+
+      }
     }
 
     useEffect(() => {

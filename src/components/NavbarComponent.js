@@ -16,7 +16,6 @@ export const NavbarComponent = ({numberOfItems}) => {
                     <Link className="nav-link text-light" to="/react-ecommerce/contact">Contact</Link>
                     </Nav>
                     <Navbar.Text href="#" className="text-end text-light mx-4">Basket {numberOfItems > 0 && `(${numberOfItems})`}</Navbar.Text>
-                    <Navbar.Text href="#" className="text-end text-light">Checkout</Navbar.Text>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

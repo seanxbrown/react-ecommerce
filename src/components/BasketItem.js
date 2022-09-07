@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 
-const Product = ({ product, addToBasket, removeFromBasket }) => {
+const Product = ({ product, addToBasket, removeFromBasket, increaseQuantity }) => {
     return (
         <Card className="product border-info border-3 border justify-content-evenly" id={product.id} >
             <Card.Body>
@@ -14,8 +14,8 @@ const Product = ({ product, addToBasket, removeFromBasket }) => {
                 </ul>
                 <div className="quantity-control d-flex m-auto justify-content-center">
                     <button type="button" className="btn btn-secondary">-</button>
-                    <input type="number" value={product.quantity}></input>
-                    <button type="button" className="btn btn-secondary">+</button>
+                    <input type="number" defaultValue={product.quantity}></input>
+                    <button type="button" className="btn btn-secondary" onClick={increaseQuantity}>+</button>
                 </div>
             </Card.Body>
             <Button type="button" className="m-4" onClick={addToBasket}>Add to basket</Button>

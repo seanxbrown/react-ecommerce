@@ -48,6 +48,20 @@ function App() {
       const newArrayOfBasketItems = [...basket].filter(product => product.id !== Number(IDofProductSelectedInBasket));
       setBasket(newArrayOfBasketItems)
 
+      
+    }
+
+    function increaseQuantity(e) {
+      const IDofProductSelectedInBasket = e.target.parentElement.parentElement.parentElement.id;
+
+
+      const newBasket = [...basket];
+          for (let product of newBasket) {
+            if (product.id === Number(IDofProductSelectedInBasket))
+            product.quantity = product.quantity + 1
+        }
+        setBasket(newBasket)
+
     }
     
 
@@ -84,7 +98,7 @@ function App() {
         <Route path="/react-ecommerce/about" element={<About />} />
         <Route path="/react-ecommerce/contact" element={<Contact/>} />
         <Route path="/react-ecommerce/shop" element={<Shop addToBasket={addToBasket} products={products}/>} />
-        <Route path="/react-ecommerce/basket" element={<Basket basket={basket} addToBasket={addToBasket} removeFromBasket={removeFromBasket}
+        <Route path="/react-ecommerce/basket" element={<Basket basket={basket} increaseQuantity={increaseQuantity} addToBasket={addToBasket} removeFromBasket={removeFromBasket}
         />} />      
         <Route path="/react-ecommerce/*" element={<NotFound/>} />      
       </Routes>

@@ -18,7 +18,7 @@ const NavbarComponent = ({basket, numberOfItems}) => {
                     <Link className="nav-link text-light" to="/react-ecommerce/shop">Shop</Link>
                     <Link className="nav-link text-light" to="/react-ecommerce/contact">Contact</Link>
                     </Nav>
-                    <Navbar.Text href="#" className="text-end text-light mx-4">Basket {basket.length > 0 && `(${numberOfItems})`}</Navbar.Text>
+                    <Link to="/react-ecommerce/basket" className="text-end text-light mx-4">Basket {basket.length > 0 && `(${numberOfItems})`}</Link>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

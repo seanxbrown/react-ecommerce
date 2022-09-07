@@ -4,8 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react"
 
-export const NavbarComponent = ({basket}) => {
-    const [numberOfItems, setNumberOfItems] = useState(0)
+const NavbarComponent = ({basket, numberOfItems}) => {
 
 
     return (
@@ -19,7 +18,7 @@ export const NavbarComponent = ({basket}) => {
                     <Link className="nav-link text-light" to="/react-ecommerce/shop">Shop</Link>
                     <Link className="nav-link text-light" to="/react-ecommerce/contact">Contact</Link>
                     </Nav>
-                    <Navbar.Text href="#" className="text-end text-light mx-4">Basket {basket.length > 0 && `()`}</Navbar.Text>
+                    <Navbar.Text href="#" className="text-end text-light mx-4">Basket {basket.length > 0 && `(${numberOfItems})`}</Navbar.Text>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

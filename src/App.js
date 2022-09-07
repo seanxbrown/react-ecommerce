@@ -6,7 +6,7 @@ import About from "./About";
 import Contact from "./Contact";
 import Shop from "./Shop";
 import NotFound from "./NotFound";
-import { NavbarComponent } from "./components/NavbarComponent";
+import NavbarComponent from "./components/NavbarComponent";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -14,7 +14,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [basket, setBasket] = useState([]);
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState([]);
+  const [numberOfItems, setNumberOfItems] = useState(0);
+
 
     
     function addToBasket(e) {
@@ -39,6 +41,7 @@ function App() {
 
       }
     }
+    
 
     useEffect(() => {
       async function getProductsData() {
@@ -51,9 +54,23 @@ function App() {
 
       getProductsData()
     }, [])
+
+    useEffect(() => {
+
+      if (basket.length > 0) {
+        const basketItemQuantity = basket.map(item => item.quantity).reduce((acc, cur) => acc + cur);
+        setNumberOfItems(basketItemQuantity)
+
+      }
+
+
+    }, [basket])
+
+
+
   return (
     <BrowserRouter>
-      <NavbarComponent basket={basket}></NavbarComponent>
+      <NavbarComponent basket={basket} numberOfItems={numberOfItems}></NavbarComponent>
       <Routes>
         <Route path="/react-ecommerce" element={<Home />} />
         <Route path="/react-ecommerce/about" element={<About />} />

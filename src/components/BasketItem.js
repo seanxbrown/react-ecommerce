@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 
-const Product = ({ product, addToBasket }) => {
+const Product = ({ product, addToBasket, removeFromBasket }) => {
     return (
         <Card className="product border-info border-3 border justify-content-evenly" id={product.id} >
             <Card.Body>
@@ -19,7 +19,7 @@ const Product = ({ product, addToBasket }) => {
                 </div>
             </Card.Body>
             <Button type="button" className="m-4" onClick={addToBasket}>Add to basket</Button>
-            <Button type="button" className="m-4 btn btn-danger" >Remove from basket </Button>
+            <Button type="button" className="m-4 btn btn-danger" onClick={removeFromBasket} >Remove from basket </Button>
         </Card>
     )
 }

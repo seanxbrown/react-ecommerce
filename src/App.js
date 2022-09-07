@@ -42,6 +42,13 @@ function App() {
 
       }
     }
+
+    function removeFromBasket(e) {
+      const IDofProductSelectedInBasket = e.target.parentElement.id;
+      const newArrayOfBasketItems = [...basket].filter(product => product.id !== Number(IDofProductSelectedInBasket));
+      setBasket(newArrayOfBasketItems)
+
+    }
     
 
     useEffect(() => {
@@ -77,7 +84,8 @@ function App() {
         <Route path="/react-ecommerce/about" element={<About />} />
         <Route path="/react-ecommerce/contact" element={<Contact/>} />
         <Route path="/react-ecommerce/shop" element={<Shop addToBasket={addToBasket} products={products}/>} />
-        <Route path="/react-ecommerce/basket" element={<Basket basket={basket} addToBasket={addToBasket}/>} />      
+        <Route path="/react-ecommerce/basket" element={<Basket basket={basket} addToBasket={addToBasket} removeFromBasket={removeFromBasket}
+        />} />      
         <Route path="/react-ecommerce/*" element={<NotFound/>} />      
       </Routes>
     </BrowserRouter>

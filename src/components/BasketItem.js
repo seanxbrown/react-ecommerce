@@ -1,5 +1,6 @@
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 
 const Product = ({ product, addToBasket }) => {
@@ -9,11 +10,16 @@ const Product = ({ product, addToBasket }) => {
                 <Card.Img className="product-image" src={product.image}></Card.Img>
                 <ul className="list-unstyled m-auto">
                     <li><Card.Text className="text-center fw-bold">{product.title}</Card.Text></li>
-                    <li><Card.Text className="text-center ">£{product.price}</Card.Text></li>
+                    <li><Card.Text className="text-center ">£{product.price * product.quantity}</Card.Text></li>
                 </ul>
-                <Card.Text>Quantity: {product.quantity}</Card.Text>
+                <div className="quantity-control d-flex m-auto justify-content-center">
+                    <button type="button" className="btn btn-secondary">-</button>
+                    <input type="number" value={product.quantity}></input>
+                    <button type="button" className="btn btn-secondary">+</button>
+                </div>
             </Card.Body>
             <Button type="button" className="m-4" onClick={addToBasket}>Add to basket</Button>
+            <Button type="button" className="m-4 btn btn-danger" >Remove from basket </Button>
         </Card>
     )
 }

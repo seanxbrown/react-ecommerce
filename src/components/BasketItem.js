@@ -10,7 +10,7 @@ const Product = ({ product, addToBasket, removeFromBasket, increaseQuantity, dec
                 <Card.Img className="product-image" src={product.image}></Card.Img>
                 <ul className="list-unstyled m-auto">
                     <li><Card.Text className="text-center fw-bold">{product.title}</Card.Text></li>
-                    <li><Card.Text className="text-center ">£{product.price * product.quantity}</Card.Text></li>
+                    <li><Card.Text className="text-center ">£{(product.price * product.quantity).toFixed(2)}</Card.Text></li>
                 </ul>
                 <div className="quantity-control d-flex m-auto justify-content-center">
                     <button type="button" className="btn btn-secondary" onClick={decreaseQuantity}>-</button>

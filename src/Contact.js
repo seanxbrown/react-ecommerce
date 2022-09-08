@@ -14,7 +14,7 @@ const Contact = () => {
                     </Container>
                 </section>
                 <section>
-                    <Container>
+                    <Container className="p-5">
                         <Row md={3}>
                         <Card bg="secondary" border="info" className="text-light">
                                 <Card.Body>

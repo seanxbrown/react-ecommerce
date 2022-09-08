@@ -6,7 +6,8 @@ import About from "./About";
 import Contact from "./Contact";
 import Shop from "./Shop";
 import NotFound from "./NotFound";
-import Basket from "./components/Basket"
+import Basket from "./components/Basket";
+import Footer from "./components/Footer";
 import NavbarComponent from "./components/NavbarComponent";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -123,6 +124,7 @@ function App() {
         />} />      
         <Route path="/react-ecommerce/*" element={<NotFound/>} />      
       </Routes>
+      <Footer></Footer>
     </BrowserRouter>
         
   

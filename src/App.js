@@ -19,11 +19,11 @@ function App() {
   const [products, setProducts] = useState([]);
   const [numberOfItems, setNumberOfItems] = useState(0);
 
-
     
     function addToBasket(e) {
       const productSelectedInShop = e.target.parentElement.id;
       const productToAddToBasket = products.filter(product => product.id === Number(productSelectedInShop))[0];
+
 
       //If the product is not in the basket, add it
 
@@ -42,6 +42,7 @@ function App() {
         setBasket(newBasket)
 
       }
+
     }
 
     function removeFromBasket(e) {
@@ -84,8 +85,7 @@ function App() {
 
     }
 
-
-    
+   
 
     useEffect(() => {
       async function getProductsData() {
@@ -114,17 +114,20 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavbarComponent basket={basket} numberOfItems={numberOfItems}></NavbarComponent>
-      <Routes>
-        <Route path="/react-ecommerce" element={<Home />} />
-        <Route path="/react-ecommerce/about" element={<About />} />
-        <Route path="/react-ecommerce/contact" element={<Contact/>} />
-        <Route path="/react-ecommerce/shop" element={<Shop addToBasket={addToBasket} products={products}/>} />
-        <Route path="/react-ecommerce/basket" element={<Basket basket={basket} decreaseQuantity={decreaseQuantity} increaseQuantity={increaseQuantity} addToBasket={addToBasket} removeFromBasket={removeFromBasket}
-        />} />      
-        <Route path="/react-ecommerce/*" element={<NotFound/>} />      
-      </Routes>
-      <Footer></Footer>
+      <Container fluid className="p-0">
+        <NavbarComponent basket={basket} numberOfItems={numberOfItems}></NavbarComponent>
+        <Routes>
+          <Route path="/react-ecommerce" element={<Home />} />
+          <Route path="/react-ecommerce/about" element={<About />} />
+          <Route path="/react-ecommerce/contact" element={<Contact/>} />
+          <Route path="/react-ecommerce/shop" element={<Shop addToBasket={addToBasket} products={products}/>} />
+          <Route path="/react-ecommerce/basket" element={<Basket basket={basket} decreaseQuantity={decreaseQuantity} increaseQuantity={increaseQuantity} addToBasket={addToBasket} removeFromBasket={removeFromBasket}
+          />} />      
+          <Route path="/react-ecommerce/*" element={<NotFound/>} />      
+        </Routes>
+        <Footer></Footer>
+      </Container>
+      
     </BrowserRouter>
         
   

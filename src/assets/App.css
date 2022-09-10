@@ -1,9 +1,9 @@
 #hero-banner {
-    width: 100vw;
-    height: 90vh;
+    height: 50vh;
     background-image: url("hero_image.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
+    background-position: center
 }
 
 .row h1 {
@@ -19,4 +19,8 @@
 
 .product-description {
     font-size: 0.8rem;
+}
+
+.test-button:hover {
+    background-color: yellow;
 }

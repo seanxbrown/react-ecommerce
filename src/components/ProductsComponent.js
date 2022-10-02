@@ -1,15 +1,17 @@
 import { useState } from "react";
 import Product from "./Product";
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const ProductsComponent = ({addToBasket, products}) => {
 
 
     return (
-        <Row md={2} className="p-5 g-3">
+        <Row xs={1} lg={3} className="g-2 border border-1 border-danger">
             {products.map(productFromState => {
-                return <Product key={Math.random() * 100000} product={productFromState} addToBasket={addToBasket}></Product>
+                return <Col>
+                <Product key={Math.random() * 100000} product={productFromState} addToBasket={addToBasket}></Product>
+                </Col>
             })}
         </Row>
     )

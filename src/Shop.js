@@ -9,11 +9,11 @@ const Shop = ({addToBasket, products}) => {
     
 
     return (
-            <Container className="p-5">
+            <Container fluid className="">
                 <header>
-                    <h2 className="text-center">Shop with us</h2>
+                    <h2 className="text-center mb-4">Shop with us</h2>
                 </header>
-                <section id="products-grid">
+                <section id="products-grid" className="w-75 mx-auto">
                     <ProductsComponent addToBasket={addToBasket} products={products}></ProductsComponent>
                 </section>
             </Container>

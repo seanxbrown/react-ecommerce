@@ -1,12 +1,14 @@
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import ButtonGroup from "react-bootstrap/ButtonGroup"
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import Col from "react-bootstrap/Col"
 
 
 const Product = ({ product, addToBasket, removeFromBasket, increaseQuantity, decreaseQuantity }) => {
     return (
-        <Card className="product border-info border-3 border justify-content-evenly" id={product.id} >
+        <Col className="d-flex align-items-stretch justify-content-evenly">
+        <Card className="product flex-fill" id={product.id} >
             <Card.Body>
                 <div class="product-img-div my-3">
                     <Card.Img className="product-image" src={product.image} variant="top"></Card.Img>
@@ -27,6 +29,8 @@ const Product = ({ product, addToBasket, removeFromBasket, increaseQuantity, dec
 
             </Card.Footer>
         </Card>
+        </Col>
+        
     )
 }
 

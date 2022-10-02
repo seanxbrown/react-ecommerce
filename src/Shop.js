@@ -13,9 +13,7 @@ const Shop = ({addToBasket, products}) => {
                 <header>
                     <h2 className="text-center mb-4">Shop with us</h2>
                 </header>
-                <section id="products-grid" className="w-75 mx-auto">
-                    <ProductsComponent addToBasket={addToBasket} products={products}></ProductsComponent>
-                </section>
+                <ProductsComponent addToBasket={addToBasket} products={products}></ProductsComponent>
             </Container>
     )
 }

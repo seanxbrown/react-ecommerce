@@ -25,8 +25,8 @@ const Basket = ( {basket, addToBasket, removeFromBasket, increaseQuantity, decre
 
 
     return (
-        <Container className="p-5">
-            <Row xs={1} md={3} className="border border-1 border-dark p-5 g-3 align-items-stretch">
+        <Container fluid className="">
+            <Row xs={1} lg={3} className="border border-1 border-dark p-5 g-3 align-items-stretch">
             {basket.length > 0 ? basket.map(itemInBasket => {
                 return <BasketItem 
                 key={Math.random() * 100000} 

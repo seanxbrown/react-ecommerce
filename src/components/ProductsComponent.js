@@ -7,7 +7,7 @@ const ProductsComponent = ({addToBasket, products}) => {
 
 
     return (
-        <Row xs={1} lg={3} className="g-2 border border-1 border-danger">
+        <Row xs={1} lg={3} className="g-2">
             {products.map(productFromState => {
                 return <Col>
                 <Product key={Math.random() * 100000} product={productFromState} addToBasket={addToBasket}></Product>

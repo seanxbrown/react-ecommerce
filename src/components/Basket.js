@@ -1,7 +1,8 @@
 import BasketItem from "./BasketItem";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
+import Alert from "react-bootstrap/Alert"
 
 const Basket = ( {basket, addToBasket, removeFromBasket, increaseQuantity, decreaseQuantity} ) => {
     const [subtotal, setSubtotal] = useState(0);
@@ -26,7 +27,7 @@ const Basket = ( {basket, addToBasket, removeFromBasket, increaseQuantity, decre
 
     return (
         <Container fluid className="">
-            <Row xs={1} lg={3} className="border border-1 border-dark p-5 g-3 align-items-stretch">
+            <Row xs={1} lg={3} className="p-5 g-3 align-items-stretch">
             {basket.length > 0 ? basket.map(itemInBasket => {
                 return <BasketItem 
                 key={Math.random() * 100000} 
@@ -37,7 +38,7 @@ const Basket = ( {basket, addToBasket, removeFromBasket, increaseQuantity, decre
                 removeFromBasket={removeFromBasket} >
                 </BasketItem>
             })
-            : <h2 className="text-center">No items in basket</h2>}
+            : <Alert variant="dark" className="text-center mx-auto">No items in basket</Alert>}
             </Row>
             <h3>Subtotal: £{subtotal}</h3>
         </Container>

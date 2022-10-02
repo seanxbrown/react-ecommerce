@@ -8,7 +8,7 @@ const Product = ({ product, addToBasket }) => {
         <Col className="d-flex"> 
             <Card className="product border-secondary border-2 border flex-fill" id={product.id} >
                 <Card.Body>
-                    <div class="product-img-div my-3">
+                    <div className="product-img-div my-3">
                         <Card.Img className="product-image" src={product.image}></Card.Img>
                     </div>
                     <ul className="list-unstyled m-auto">

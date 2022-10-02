@@ -10,7 +10,7 @@ const Product = ({ product, addToBasket, removeFromBasket, increaseQuantity, dec
         <Col className="d-flex align-items-stretch justify-content-evenly">
         <Card className="product flex-fill" id={product.id} >
             <Card.Body>
-                <div class="product-img-div my-3">
+                <div className="product-img-div my-3">
                     <Card.Img className="product-image" src={product.image} variant="top"></Card.Img>
  
                 </div>

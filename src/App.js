@@ -45,7 +45,7 @@ function App() {
   }
 
   function removeFromBasket(e) {
-    const IDofProductSelectedInBasket = e.target.parentElement.id;
+    const IDofProductSelectedInBasket = e.target.parentElement.parentElement.id;
     const newArrayOfBasketItems = [...basket].filter(product => product.id !== Number(IDofProductSelectedInBasket));
     setBasket(newArrayOfBasketItems)
 

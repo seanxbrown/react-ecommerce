@@ -14,7 +14,7 @@ const Product = ({ product, addToBasket }) => {
                     <li><Card.Text className="text-center ">£{product.price}</Card.Text></li>
                 </ul>
             </Card.Body>
-            <Button type="button" className="m-4 test-button" onClick={addToBasket}>Add to basket</Button>
+            <Button type="button" variant="success" className="m-4 test-button" onClick={addToBasket}>Add to basket</Button>
         </Card>
     )
 }

@@ -4,11 +4,14 @@ import Row from "react-bootstrap/Row";
 const Home = () => {
 
     return (
-        <Container fluid>
-          <Row id="hero-banner">
-            <h1 className="text-center my-auto">Technology that powers the future</h1>
-          </Row>
+      <>
+      <Container fluid id="hero-banner" className="d-flex flex-column justify-content-center align-items-center">
+          <h1 className="text-light">Technology that powers the future</h1>
       </Container>
+      </>
+        
+          
+    
     )
 
 }

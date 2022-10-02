@@ -1,14 +1,10 @@
 #hero-banner {
-    height: 75vh;
+    height: 33vh;
+    width: 100vw;
     background-image: url("hero_image.jpg");
     background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center
-}
-
-.row h1 {
-    color: #fff;
-    font-weight: bold;
+    background-size: cover;
+    background-position: center;
 }
 
 .product-img-div {

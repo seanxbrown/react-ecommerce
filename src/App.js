@@ -124,7 +124,7 @@ function App() {
           />} />      
           <Route path="/react-ecommerce/*" element={<NotFound/>} />      
         </Routes>
-        <Footer></Footer>
+        <Footer />
       </Container>
       
     </BrowserRouter>

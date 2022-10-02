@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <Container fluid>
           <Row id="hero-banner">
-            <h1>Technology that powers the future</h1>
+            <h1 className="text-center my-auto">Technology that powers the future</h1>
           </Row>
       </Container>
     )

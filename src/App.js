@@ -18,97 +18,96 @@ function App() {
   const [basket, setBasket] = useState([]);
   const [products, setProducts] = useState([]);
   const [numberOfItems, setNumberOfItems] = useState(0);
+    
+  function addToBasket(e) {
+    const productSelectedInShop = e.target.parentElement.id;
+    const productToAddToBasket = products.filter(product => product.id === Number(productSelectedInShop))[0];
+
+
+    //If the product is not in the basket, add it
+
+
+    if(!basket.includes(productToAddToBasket)) {
+      productToAddToBasket.quantity = 1;
+
+      const newBasket = [...basket].concat(productToAddToBasket);
+      setBasket(newBasket)
+    } else {
+      const newBasket = [...basket];
+        for (let product of newBasket) {
+          if (product.id === productToAddToBasket.id)
+          product.quantity = product.quantity + 1
+      }
+      setBasket(newBasket)
+
+    }
+
+  }
+
+  function removeFromBasket(e) {
+    const IDofProductSelectedInBasket = e.target.parentElement.id;
+    const newArrayOfBasketItems = [...basket].filter(product => product.id !== Number(IDofProductSelectedInBasket));
+    setBasket(newArrayOfBasketItems)
 
     
-    function addToBasket(e) {
-      const productSelectedInShop = e.target.parentElement.id;
-      const productToAddToBasket = products.filter(product => product.id === Number(productSelectedInShop))[0];
+  }
+
+  function increaseQuantity(e) {
+    const IDofProductSelectedInBasket = e.target.parentElement.parentElement.parentElement.id;
 
 
-      //If the product is not in the basket, add it
-
-
-      if(!basket.includes(productToAddToBasket)) {
-        productToAddToBasket.quantity = 1;
-
-        const newBasket = [...basket].concat(productToAddToBasket);
-        setBasket(newBasket)
-      } else {
-        const newBasket = [...basket];
-          for (let product of newBasket) {
-            if (product.id === productToAddToBasket.id)
-            product.quantity = product.quantity + 1
-        }
-        setBasket(newBasket)
-
+    const newBasket = [...basket];
+        for (let product of newBasket) {
+          if (product.id === Number(IDofProductSelectedInBasket))
+          product.quantity = product.quantity + 1
       }
+      setBasket(newBasket)
 
-    }
+  }
 
-    function removeFromBasket(e) {
-      const IDofProductSelectedInBasket = e.target.parentElement.id;
-      const newArrayOfBasketItems = [...basket].filter(product => product.id !== Number(IDofProductSelectedInBasket));
-      setBasket(newArrayOfBasketItems)
+  function decreaseQuantity(e) {
+    const IDofProductSelectedInBasket = e.target.parentElement.parentElement.parentElement.id;
+    let newBasket = [...basket];
+    
+        for (let product of newBasket) {
+          if (product.id === Number(IDofProductSelectedInBasket)) {
+            if (product.quantity > 1) {
+              product.quantity = product.quantity - 1
+              setBasket(newBasket)
+            } else { 
+              newBasket = newBasket.filter(product => product.id !== Number(IDofProductSelectedInBasket));
+              setBasket(newBasket)
 
-      
-    }
-
-    function increaseQuantity(e) {
-      const IDofProductSelectedInBasket = e.target.parentElement.parentElement.parentElement.id;
-
-
-      const newBasket = [...basket];
-          for (let product of newBasket) {
-            if (product.id === Number(IDofProductSelectedInBasket))
-            product.quantity = product.quantity + 1
-        }
-        setBasket(newBasket)
-
-    }
-
-    function decreaseQuantity(e) {
-      const IDofProductSelectedInBasket = e.target.parentElement.parentElement.parentElement.id;
-      let newBasket = [...basket];
-      
-          for (let product of newBasket) {
-            if (product.id === Number(IDofProductSelectedInBasket)) {
-              if (product.quantity > 1) {
-                product.quantity = product.quantity - 1
-                setBasket(newBasket)
-              } else { 
-                newBasket = newBasket.filter(product => product.id !== Number(IDofProductSelectedInBasket));
-                setBasket(newBasket)
-
-              }
             }
-        }
+          }
+      }
+
+  }
+
+  
+
+  useEffect(() => {
+    async function getProductsData() {
+
+      const response = await fetch("https://fakestoreapi.com/products/category/electronics", {mode: "cors"});
+      const data = await response.json();
+      setProducts(products.concat(data))
 
     }
 
-   
+    getProductsData()
+  }, [])
 
-    useEffect(() => {
-      async function getProductsData() {
+  useEffect(() => {
 
-        const response = await fetch("https://fakestoreapi.com/products/category/electronics", {mode: "cors"});
-        const data = await response.json();
-        setProducts(products.concat(data))
+    if (basket.length > 0) {
+      const basketItemQuantity = basket.map(item => item.quantity).reduce((acc, cur) => acc + cur);
+      setNumberOfItems(basketItemQuantity)
 
-      }
-
-      getProductsData()
-    }, [])
-
-    useEffect(() => {
-
-      if (basket.length > 0) {
-        const basketItemQuantity = basket.map(item => item.quantity).reduce((acc, cur) => acc + cur);
-        setNumberOfItems(basketItemQuantity)
-
-      }
+    }
 
 
-    }, [basket])
+  }, [basket])
 
 
 

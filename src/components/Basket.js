@@ -40,7 +40,7 @@ const Basket = ( {basket, addToBasket, removeFromBasket, increaseQuantity, decre
             })
             : <Alert variant="dark" className="text-center mx-auto">No items in basket</Alert>}
             </Row>
-            <h3>Subtotal: £{subtotal}</h3>
+            <h3>Subtotal: £{basket.length === 0 ? 0 : subtotal}</h3>
         </Container>
         
     )

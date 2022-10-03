@@ -96,7 +96,7 @@ function App() {
     }
 
     getProductsData()
-  }, [])
+  }, [products])
 
   useEffect(() => {
 

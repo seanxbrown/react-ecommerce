@@ -92,10 +92,12 @@ function App() {
       const response = await fetch("https://fakestoreapi.com/products/category/electronics", {mode: "cors"});
       const data = await response.json();
       setProducts(products.concat(data))
+      console.log("Products retrieved from API")
 
     }
 
     getProductsData()
+
   }, [])
 
   useEffect(() => {

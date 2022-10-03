@@ -3,9 +3,10 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import { useState, useEffect } from "react";
 import Alert from "react-bootstrap/Alert";
-import Button from "react-bootstrap/Button"
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col"
 
-const Basket = ( {updateQuantityForBasketItem, basket, addToBasket, removeFromBasket, increaseQuantity, decreaseQuantity} ) => {
+const Basket = ( {removeAllFromBasket, updateQuantityForBasketItem, basket, addToBasket, removeFromBasket, increaseQuantity, decreaseQuantity} ) => {
     const [subtotal, setSubtotal] = useState(0);
 
     useEffect(() => {
@@ -37,13 +38,17 @@ const Basket = ( {updateQuantityForBasketItem, basket, addToBasket, removeFromBa
                 increaseQuantity={increaseQuantity} 
                 addToBasket={addToBasket} 
                 removeFromBasket={removeFromBasket}
-                updateQuantityForBasketItem={updateQuantityForBasketItem} >
+                updateQuantityForBasketItem={updateQuantityForBasketItem}
+                removeAllFromBasket={removeAllFromBasket} >
                 </BasketItem>
             })
             : <Alert variant="dark" className="text-center mx-auto">No items in basket</Alert>}
             </Row>
-            <h3>Subtotal: £{basket.length === 0 ? 0 : subtotal}</h3>
-            <Button type="button" className="btn btn-success">Checkout</Button>
+            <Row className="g-2">
+                <Col xs={12} lg={6}><h3 className="">Subtotal: £{basket.length === 0 ? 0 : subtotal}</h3></Col>
+                <Col xs={12} lg={3} className=""><Button type="button" className="btn btn-success w-100">Checkout</Button></Col>
+                <Col xs={12} lg={3}><Button type="button" className="btn btn-danger w-100" onClick={removeAllFromBasket}>Remove all</Button></Col>
+            </Row>
         </Container>
         
     )

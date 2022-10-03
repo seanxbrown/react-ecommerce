@@ -36,7 +36,7 @@ function App() {
       const newBasket = [...basket];
         for (let product of newBasket) {
           if (product.id === productToAddToBasket.id)
-          product.quantity = product.quantity + 1
+          product.quantity++
       }
       setBasket(newBasket)
 
@@ -59,7 +59,7 @@ function App() {
     const newBasket = [...basket];
         for (let product of newBasket) {
           if (product.id === Number(IDofProductSelectedInBasket))
-          product.quantity = product.quantity + 1
+          product.quantity++
       }
       setBasket(newBasket)
 
@@ -72,7 +72,7 @@ function App() {
         for (let product of newBasket) {
           if (product.id === Number(IDofProductSelectedInBasket)) {
             if (product.quantity > 1) {
-              product.quantity = product.quantity - 1
+              product.quantity--
               setBasket(newBasket)
             } else { 
               newBasket = newBasket.filter(product => product.id !== Number(IDofProductSelectedInBasket));
@@ -84,7 +84,26 @@ function App() {
 
   }
 
-  
+  function updateQuantityForBasketItem(e) {
+    e.preventDefault();
+    const IDofProductToChange = e.target.parentElement.parentElement.id;
+    const basketItemInputField = document.getElementById(`${IDofProductToChange}input`);
+
+    if (basketItemInputField.value < 1) {
+      basketItemInputField.value = ""
+      return
+    }
+
+    const newBasket = [...basket];
+    for (let product of newBasket) {
+      if (product.id === Number(IDofProductToChange)) {
+        product.quantity = Number(basketItemInputField.value);
+        setBasket(newBasket)
+      }
+    }
+
+  }
+
 
   useEffect(() => {
     async function getProductsData() {
@@ -92,7 +111,6 @@ function App() {
       const response = await fetch("https://fakestoreapi.com/products/category/electronics", {mode: "cors"});
       const data = await response.json();
       setProducts(products.concat(data))
-      console.log("Products retrieved from API")
 
     }
 
@@ -122,7 +140,7 @@ function App() {
           <Route path="/react-ecommerce/about" element={<About />} />
           <Route path="/react-ecommerce/contact" element={<Contact/>} />
           <Route path="/react-ecommerce/shop" element={<Shop addToBasket={addToBasket} products={products}/>} />
-          <Route path="/react-ecommerce/basket" element={<Basket basket={basket} decreaseQuantity={decreaseQuantity} increaseQuantity={increaseQuantity} addToBasket={addToBasket} removeFromBasket={removeFromBasket}
+          <Route path="/react-ecommerce/basket" element={<Basket updateQuantityForBasketItem={updateQuantityForBasketItem} basket={basket} decreaseQuantity={decreaseQuantity} increaseQuantity={increaseQuantity} addToBasket={addToBasket} removeFromBasket={removeFromBasket}
           />} />      
           <Route path="/react-ecommerce/*" element={<NotFound/>} />      
         </Routes>

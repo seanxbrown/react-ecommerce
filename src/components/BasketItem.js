@@ -5,7 +5,7 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Col from "react-bootstrap/Col"
 
 
-const Product = ({ product, addToBasket, removeFromBasket, increaseQuantity, decreaseQuantity }) => {
+const Product = ({ updateQuantityForBasketItem, product, addToBasket, removeFromBasket, increaseQuantity, decreaseQuantity }) => {
     return (
         <Col className="d-flex align-items-stretch justify-content-evenly">
         <Card className="product flex-fill" id={product.id} >
@@ -20,11 +20,11 @@ const Product = ({ product, addToBasket, removeFromBasket, increaseQuantity, dec
                 </ul>
             </Card.Body>
             <Card.Footer className="d-flex flex-column">
-            <div className="quantity-control d-flex justify-content-center">
+            <Form className="quantity-control d-flex justify-content-center" onSubmit={updateQuantityForBasketItem}>
                     <button type="button" className="btn btn-secondary" onClick={decreaseQuantity}>-</button>
-                    <input type="number" defaultValue={product.quantity}></input>
+                    <input id={`${product.id}input`}type="number" defaultValue={product.quantity} className="text-center"></input>
                     <button type="button" className="btn btn-secondary" onClick={increaseQuantity}>+</button>
-                </div>
+                </Form>
                 <Button type="button" className="mx-auto mt-4 btn btn-danger" onClick={removeFromBasket} >Remove from basket </Button>
 
             </Card.Footer>

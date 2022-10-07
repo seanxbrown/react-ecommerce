@@ -9,7 +9,7 @@ const Shop = ({addToBasket, products}) => {
     
 
     return (
-            <Container fluid className="">
+            <Container fluid className="my-5">
                 <header>
                     <h2 className="text-center mb-4">Shop with us</h2>
                 </header>

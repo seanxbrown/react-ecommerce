@@ -8,13 +8,10 @@ const Contact = () => {
     return (
         
         <Container fluid>
-            <section>
-                <Container>
-                <h2 className="text-center">Reach out to us</h2>
-                </Container>
-            </section>
-            <section>
                 <Container className="p-5">
+                    <header>
+                    <h2 className="text-center">Reach out to us</h2>
+                    </header>
                     <Row md={3}>
                     <Card bg="secondary" border="info" className="text-light">
                             <Card.Body>
@@ -48,7 +45,6 @@ const Contact = () => {
                         </Card>
                     </Row>
                 </Container>
-            </section>
         </Container>
     )
 }

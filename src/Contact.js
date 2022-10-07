@@ -6,14 +6,14 @@ import Card from "react-bootstrap/Card";
 
 const Contact = () => {
     return (
-        
+
         <Container fluid>
                 <Container className="p-5">
                     <header>
                     <h2 className="text-center">Reach out to us</h2>
                     </header>
                     <Row md={3}>
-                    <Card bg="secondary" border="info" className="text-light">
+                    <Card bg="secondary" border="light" className="text-light">
                             <Card.Body>
                             <Card.Header className="text-center">London</Card.Header>
                             <Card.Text>27 Maiden Ln</Card.Text>
@@ -23,7 +23,7 @@ const Contact = () => {
                             <Card.Text>+44 20 7836 2292</Card.Text>
                             </Card.Body>
                         </Card>
-                        <Card bg="secondary" border="info" className="text-light">
+                        <Card bg="secondary" border="light" className="text-light">
                             <Card.Body>
                             <Card.Header className="text-center">New York</Card.Header>
                             <Card.Text>2200 Central Ave SE</Card.Text>
@@ -33,7 +33,7 @@ const Contact = () => {
                             <Card.Text>+1 505 265-2750</Card.Text>
                             </Card.Body>
                         </Card>
-                        <Card bg="secondary" border="info" className="text-light">
+                        <Card bg="secondary" border="light" className="text-light">
                             <Card.Body>
                             <Card.Header className="text-center">Tokyo</Card.Header>
                             <Card.Text>147-1246, Kyojima</Card.Text>

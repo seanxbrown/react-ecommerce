@@ -1,7 +1,18 @@
-#hero-banner {
+ 
+  #hero-banner {
     height: 33vh;
     width: 100vw;
     background-image: url("hero_image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+ 
+#earth-section {
+    height: 33vh;
+    width: 100vw;
+    background-image: url("earth_image.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

@@ -4,10 +4,20 @@ import Container from "react-bootstrap/Container";
 import { useState, useEffect } from "react";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col"
+import Col from "react-bootstrap/Col";
+import Checkout from "./Checkout"
 
-const Basket = ( {removeAllFromBasket, updateQuantityForBasketItem, basket, addToBasket, removeFromBasket, increaseQuantity, decreaseQuantity} ) => {
+const Basket = ( {numberOfItems, removeAllFromBasket, updateQuantityForBasketItem, basket, addToBasket, removeFromBasket, increaseQuantity, decreaseQuantity} ) => {
     const [subtotal, setSubtotal] = useState(0);
+    const [displayCheckout, setDisplayCheckout] = useState(false);
+
+    function showCheckout() {
+        setDisplayCheckout(true);
+    }
+
+    function hideCheckout() {
+        setDisplayCheckout(false);
+    }
 
     useEffect(() => {
 
@@ -28,6 +38,8 @@ const Basket = ( {removeAllFromBasket, updateQuantityForBasketItem, basket, addT
 
 
     return (
+        <>
+        <Checkout hideCheckout={hideCheckout} displayCheckout={displayCheckout} numberOfItems={numberOfItems} subtotal={subtotal}/>
         <Container className="mt-5 pb-5">
             <Row xs={1} md={2} lg={3} className="g-3 pb-5">
             {basket.length > 0 ? basket.map(itemInBasket => {
@@ -46,10 +58,12 @@ const Basket = ( {removeAllFromBasket, updateQuantityForBasketItem, basket, addT
             </Row>
             <Row className="g-2">
                 <Col xs={12} lg={6}><h3 className="">Subtotal: £{basket.length === 0 ? 0 : subtotal}</h3></Col>
-                <Col xs={12} lg={3} className=""><Button type="button" className="btn btn-success w-100">Checkout</Button></Col>
+                <Col xs={12} lg={3} className=""><Button type="button" className="btn btn-success w-100" onClick={showCheckout}>Checkout</Button></Col>
                 <Col xs={12} lg={3}><Button type="button" className="btn btn-danger w-100" onClick={removeAllFromBasket}>Remove all</Button></Col>
             </Row>
         </Container>
+        </>
+        
         
     )
 }

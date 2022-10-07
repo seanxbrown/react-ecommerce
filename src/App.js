@@ -144,7 +144,7 @@ function App() {
           <Route path="/react-ecommerce/about" element={<About />} />
           <Route path="/react-ecommerce/contact" element={<Contact/>} />
           <Route path="/react-ecommerce/shop" element={<Shop addToBasket={addToBasket} products={products}/>} />
-          <Route path="/react-ecommerce/basket" element={<Basket removeAllFromBasket={removeAllFromBasket} updateQuantityForBasketItem={updateQuantityForBasketItem} basket={basket} decreaseQuantity={decreaseQuantity} increaseQuantity={increaseQuantity} addToBasket={addToBasket} removeFromBasket={removeFromBasket}
+          <Route path="/react-ecommerce/basket" element={<Basket numberOfItems={numberOfItems} removeAllFromBasket={removeAllFromBasket} updateQuantityForBasketItem={updateQuantityForBasketItem} basket={basket} decreaseQuantity={decreaseQuantity} increaseQuantity={increaseQuantity} addToBasket={addToBasket} removeFromBasket={removeFromBasket}
           />} />      
           <Route path="/react-ecommerce/*" element={<NotFound/>} />      
         </Routes>

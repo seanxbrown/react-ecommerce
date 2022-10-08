@@ -2,7 +2,8 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
-import Col from "react-bootstrap/Col"
+import Col from "react-bootstrap/Col";
+import formatThousands from "format-thousands";
 
 
 const Product = ({ updateQuantityForBasketItem, product, addToBasket, removeFromBasket, increaseQuantity, decreaseQuantity }) => {
@@ -16,7 +17,7 @@ const Product = ({ updateQuantityForBasketItem, product, addToBasket, removeFrom
                 </div>
                 <ul className="list-unstyled m-auto">
                     <li><Card.Text className="text-center fw-bold">{product.title}</Card.Text></li>
-                    <li><Card.Text className="text-center ">£{(product.price * product.quantity).toFixed(2)}</Card.Text></li>
+                    <li><Card.Text className="text-center ">£{formatThousands((product.price * product.quantity).toFixed(2),",")}</Card.Text></li>
                 </ul>
             </Card.Body>
             <Card.Footer className="d-flex flex-column">

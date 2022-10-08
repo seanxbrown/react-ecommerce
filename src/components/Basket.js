@@ -41,8 +41,8 @@ const Basket = ( {numberOfItems, removeAllFromBasket, updateQuantityForBasketIte
     return (
         <>
         <Checkout hideCheckout={hideCheckout} displayCheckout={displayCheckout} numberOfItems={numberOfItems} subtotal={subtotal}/>
-        <Container className="mt-5 pb-5">
-            <Row xs={1} md={2} lg={3} className="g-3 pb-5">
+        <Container className="mt-5 pb-5 vh-100 overflow-scroll">
+            <Row xs={1} md={2} lg={3} className="g-3 pb-5 mt-4">
             {basket.length > 0 ? basket.map(itemInBasket => {
                 return <BasketItem 
                 key={Math.random() * 100000} 

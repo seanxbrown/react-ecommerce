@@ -11,7 +11,7 @@ const Contact = () => {
             <Container fluid id="earth-section" className="d-flex flex-column justify-content-center align-items-center">
                 <h1 className="text-light">Contact Us</h1>
              </Container>
-             <Container className="mt-0 py-4">
+             <Container className="mt-0 py-4 mb-5">
                 <h2 className="text-center">Locations</h2>
                 <Row xs={1} md={3}>
                     <Card bg="secondary" border="light" className="text-light">

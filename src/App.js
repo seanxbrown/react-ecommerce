@@ -112,9 +112,14 @@ function App() {
   useEffect(() => {
     async function getProductsData() {
 
-      const response = await fetch("https://fakestoreapi.com/products/category/electronics", {mode: "cors"});
+      try {
+        const response = await fetch("https://fakestoreapi.com/products/category/electronics", {mode: "cors"});
       const data = await response.json();
       setProducts(products.concat(data))
+
+      } catch(e) {
+        alert(e)
+      } 
 
     }
 

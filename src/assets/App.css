@@ -1,4 +1,8 @@
  
+  * {
+    font-family: 'Roboto', sans-serif;
+}
+
   #hero-banner {
     height: 100vh;
     width: 100vw;

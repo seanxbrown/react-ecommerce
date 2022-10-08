@@ -112,15 +112,15 @@ function App() {
   useEffect(() => {
     async function getProductsData() {
 
-      try {
-        const response = await fetch("https://fakestoreapi.com/products/category/electronics", {mode: "cors"});
-      const data = await response.json();
-      setProducts(products.concat(data))
-
-      } catch(e) {
-        alert(e)
-      } 
-
+      if (products.length === 0) {
+        try {
+          const response = await fetch("https://fakestoreapi.com/products/category/electronics", {mode: "cors"});
+        const data = await response.json();
+        setProducts(products.concat(data))
+        } catch(e) {
+          alert(e)
+        } 
+      }
     }
 
     getProductsData()
@@ -134,8 +134,6 @@ function App() {
       setNumberOfItems(basketItemQuantity)
 
     }
-
-
   }, [basket])
 
 
@@ -155,7 +153,6 @@ function App() {
         </Routes>
         <Footer />
       </Container>
-      
     </BrowserRouter>
         
   

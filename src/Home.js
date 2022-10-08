@@ -10,8 +10,8 @@ const Home = () => {
       <Container fluid id="hero-banner" className="d-flex flex-column justify-content-center align-items-center">
           <h1 className="text-light">Technology that powers the future</h1>
       </Container>
-      <Container fluid className="mb-5 mt-4" >
-          <h2 className="text-dark text-center">Changing lives through innovation</h2>
+      <Container className="mb-5 mt-4" id="innovation-section">
+          <h2 className="text-dark text-center mb-3">Changing lives through innovation</h2>
           <Row xs={1} lg={3}>
             <Card>
               <Card.Header>
@@ -36,11 +36,6 @@ const Home = () => {
             </Card>
           </Row>
       </Container>
-      <Container fluid id="earth-section" className="d-flex flex-column justify-content-center align-items-center">
-          <h1 className="text-light">Connecting people</h1>
-      </Container>
-      
-
       </>
         
           

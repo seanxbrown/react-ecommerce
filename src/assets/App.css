@@ -18,6 +18,25 @@
     background-position: center;
 }
 
+#about-banner {
+    height: 33vh;
+    width: 100vw;
+    background-image: url("about_image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#shop-banner {
+    height: 33vh;
+    width: 100vw;
+    background-image: url("shop_image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
 .product-img-div {
     height: 128px;
     width: 128px;

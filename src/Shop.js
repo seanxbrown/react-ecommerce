@@ -9,12 +9,12 @@ const Shop = ({addToBasket, products}) => {
     
 
     return (
-            <Container fluid className="my-5">
-                <header>
-                    <h2 className="text-center mb-4">Shop with us</h2>
-                </header>
+            <>
+                <Container fluid id="shop-banner" className="d-flex flex-column justify-content-center align-items-center">
+                    <h1 className="text-light">Shop</h1>
+                </Container>
                 <ProductsComponent addToBasket={addToBasket} products={products}></ProductsComponent>
-            </Container>
+            </>
     )
 }
 

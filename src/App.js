@@ -142,7 +142,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Container fluid className="p-0">
+      <Container fluid className="p-0 overflow-hidden" id="page-container">
         <NavbarComponent basket={basket} numberOfItems={numberOfItems}></NavbarComponent>
         <Routes>
           <Route path="/react-ecommerce" element={<Home />} />

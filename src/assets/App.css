@@ -3,41 +3,32 @@
     font-family: 'Roboto', sans-serif;
 }
 
-  #hero-banner {
-    height: 100vh;
+.banner {
+    height: 33vh;
     width: 100vw;
-    background-image: url("hero_image_opt.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+
+
+  #hero-banner {
+    height: 100vh;
+    background-image: url("hero_image_opt.jpg");
 }
 
  
 #earth-section {
-    height: 33vh;
-    width: 100vw;
     background-image: url("earth_image_opt.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
 }
 
 #about-banner {
-    height: 33vh;
-    width: 100vw;
     background-image: url("about_image_opt.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
 }
 
 #shop-banner {
-    height: 33vh;
-    width: 100vw;
     background-image: url("shop_image_opt.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
 }
 
 

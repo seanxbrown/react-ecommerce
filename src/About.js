@@ -9,7 +9,7 @@ import ListGroup from "react-bootstrap/ListGroup"
 export const About = () => {
     return (
         <>
-            <Container fluid id="about-banner" className="d-flex flex-column justify-content-center align-items-center">
+            <Container fluid id="about-banner" className="d-flex flex-column justify-content-center align-items-center banner">
                 <h1 className="text-light">Empowering people and businesses</h1>
             </Container>
 

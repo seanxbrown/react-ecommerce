@@ -8,7 +8,7 @@ const Contact = () => {
     return (
 
         <>
-            <Container fluid id="earth-section" className="d-flex flex-column justify-content-center align-items-center">
+            <Container fluid id="earth-section" className="d-flex flex-column justify-content-center align-items-center banner">
                 <h1 className="text-light">Contact Us</h1>
              </Container>
              <Container className="mt-0 py-4 mb-5">

@@ -105,8 +105,9 @@ function App() {
   }
 
   function removeAllFromBasket() {
-    setBasket([])
-  }
+    setBasket([]);
+    setNumberOfItems(0)
+    }
 
 
   useEffect(() => {

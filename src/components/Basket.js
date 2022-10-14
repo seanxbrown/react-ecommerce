@@ -27,7 +27,7 @@ const Basket = ( {numberOfItems, removeAllFromBasket, updateQuantityForBasketIte
 
                 let newSubtotal = basket.map(item => item.quantity * item.price).reduce((acc, cur) => acc + cur)
                 setSubtotal(newSubtotal)
-            }
+            } else { setSubtotal(0) }
         }
 
         calculateSubtotal()
@@ -41,6 +41,8 @@ const Basket = ( {numberOfItems, removeAllFromBasket, updateQuantityForBasketIte
     return (
         <>
         <Checkout hideCheckout={hideCheckout} displayCheckout={displayCheckout} numberOfItems={numberOfItems} subtotal={subtotal}/>
+        <h2 className="text-center mt-5">Basket</h2>
+
         <Container className="mt-5 pb-5 vh-100 overflow-scroll">
             <Row xs={1} md={2} lg={3} className="g-3 pb-5 mt-4">
             {basket.length > 0 ? basket.map(itemInBasket => {

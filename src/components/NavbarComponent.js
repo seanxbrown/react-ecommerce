@@ -9,9 +9,9 @@ const NavbarComponent = ({basket, numberOfItems}) => {
 
 
     return (
-        <Navbar bg="dark" expand="lg" sticky="top" className="w-100 px-5">
+        <Navbar expand="lg" sticky="top" className="w-100 px-5">
             <Container fluid>
-                <Link className="navbar-brand" to="/react-ecommerce">Ecommerce Site</Link>
+                <Link className="navbar-brand text-light" to="/react-ecommerce">Ecommerce Site</Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"></Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">

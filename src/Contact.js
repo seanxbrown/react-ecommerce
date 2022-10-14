@@ -13,8 +13,9 @@ const Contact = () => {
              </Container>
              <Container className="mt-0 py-4 mb-5">
                 <h2 className="text-center">Locations</h2>
-                <Row xs={1} md={3}>
-                    <Card bg="secondary" border="light" className="text-light">
+                <Row xs={1} md={3} className="gy-3">
+                    <Col>
+                    <Card className="text-light location-box">
                         <Card.Body>
                         <Card.Header className="text-center">London</Card.Header>
                         <Card.Text>27 Maiden Ln</Card.Text>
@@ -24,7 +25,9 @@ const Contact = () => {
                         <Card.Text>+44 20 7836 2292</Card.Text>
                         </Card.Body>
                     </Card>
-                    <Card bg="secondary" border="light" className="text-light">
+                    </Col>
+                    <Col>
+                    <Card className="text-light location-box">
                         <Card.Body>
                         <Card.Header className="text-center">New York</Card.Header>
                         <Card.Text>2200 Central Ave SE</Card.Text>
@@ -34,7 +37,9 @@ const Contact = () => {
                         <Card.Text>+1 505 265-2750</Card.Text>
                         </Card.Body>
                     </Card>
-                    <Card bg="secondary" border="light" className="text-light">
+                    </Col>
+                    <Col>
+                    <Card className="text-light location-box">
                         <Card.Body>
                         <Card.Header className="text-center">Tokyo</Card.Header>
                         <Card.Text>147-1246, Kyojima</Card.Text>
@@ -44,6 +49,11 @@ const Contact = () => {
                         <Card.Text>+81 74-952-7093</Card.Text>
                         </Card.Body>
                     </Card>
+
+                    </Col>
+                    
+                   
+                   
                 </Row>  
              </Container>
 

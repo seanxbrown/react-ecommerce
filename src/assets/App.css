@@ -3,6 +3,14 @@
     font-family: 'Roboto', sans-serif;
 }
 
+:root {
+    --primary: #060B12;
+    --button-positive: #1E395E;
+    --button-negative: #3A495E;
+    --secondary: #202833;
+    --text: #3767AB
+}
+
 .banner {
     height: 33vh;
     width: 100vw;
@@ -11,9 +19,29 @@
     background-position: center;
 }
 
+button.positive-button {
+    background-color: var(--button-positive);
+    border: 0;
+}
+
+button.negative-button {
+    background-color: var(--button-negative)
+}
+
+.location-box.card {
+    background-color: var(--secondary)
+}
+
+aside#checkoutBox {
+    background-color: var(--secondary);
+    opacity: 0.9;
+    box-shadow: 10px 1px 10px 1px var(--secondary);
+    border-radius: 5px;
+}
 
 
-  #hero-banner {
+
+#hero-banner {
     height: 100vh;
     background-image: url("hero_image_opt.jpg");
 }
@@ -49,10 +77,6 @@
     font-size: 0.8rem;
 }
 
-.test-button:hover {
-    background-color: yellow;
-}
-
 #checkoutBox {
     position: fixed;
     height: 40vh;
@@ -70,6 +94,12 @@
 #checkoutBox.displayCheckout {
     width: 100vw;
     padding: 1rem 1rem;
+}
+
+footer, nav {
+
+    background-color: var(--primary)
+
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {

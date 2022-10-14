@@ -18,7 +18,7 @@ function Checkout({ numberOfItems, subtotal, displayCheckout, hideCheckout }) {
 
 
     return (
-        <aside id="checkoutBox" className="border border-1 border-info text-dark">
+        <aside id="checkoutBox" className="border-0 text-light">
             <div id="checkoutBoxHeader" className="d-flex justify-content-between ms-4 mt-2">
                 <h4>Checkout</h4>
                 <CloseButton onClick={hideCheckout}/>
@@ -31,7 +31,7 @@ function Checkout({ numberOfItems, subtotal, displayCheckout, hideCheckout }) {
 
             </div>
             
-            <Button type="button" id="deliveryButton" className="btn btn-success border-0 p-3 mb-4 ms-4">Delivery options</Button>
+            <Button type="button" id="deliveryButton" className="btn positive-button border-0 p-3 mb-4 ms-4">Delivery options</Button>
 
         </aside>
     )

@@ -46,6 +46,7 @@ function App() {
 
   function removeFromBasket(e) {
     const IDofProductSelectedInBasket = e.target.parentElement.parentElement.id;
+    setNumberOfItems(numberOfItems => numberOfItems - 1)
     const newArrayOfBasketItems = [...basket].filter(product => product.id !== Number(IDofProductSelectedInBasket));
     setBasket(newArrayOfBasketItems)
 
@@ -75,6 +76,7 @@ function App() {
               product.quantity--
               setBasket(newBasket)
             } else { 
+              setNumberOfItems(numberOfItems => numberOfItems - 1)
               newBasket = newBasket.filter(product => product.id !== Number(IDofProductSelectedInBasket));
               setBasket(newBasket)
 
@@ -129,6 +131,7 @@ function App() {
   }, [])
 
   useEffect(() => {
+    //Update basket item quantity
 
     if (basket.length > 0) {
       const basketItemQuantity = basket.map(item => item.quantity).reduce((acc, cur) => acc + cur);

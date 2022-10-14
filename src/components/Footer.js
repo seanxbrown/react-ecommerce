@@ -1,5 +1,3 @@
-import Row from "react-bootstrap/Row";
-
 const Footer = () => {
     return(
         <footer className="text-center text-light p-3">

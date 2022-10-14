@@ -1,12 +1,7 @@
-import NavbarComponent from "./components/NavbarComponent"
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup"
+import ListGroup from "react-bootstrap/ListGroup";
 
-
-export const About = () => {
+const About = () => {
     return (
         <>
             <Container fluid id="about-banner" className="d-flex flex-column justify-content-center align-items-center banner">
@@ -31,7 +26,6 @@ export const About = () => {
                 </ListGroup>
             </Container>
         </>
-
     )
 }
 

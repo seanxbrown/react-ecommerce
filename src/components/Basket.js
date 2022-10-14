@@ -26,17 +26,14 @@ const Basket = ( {numberOfItems, removeAllFromBasket, updateQuantityForBasketIte
             if(basket.length > 0) {
 
                 let newSubtotal = basket.map(item => item.quantity * item.price).reduce((acc, cur) => acc + cur)
-                setSubtotal(newSubtotal)
-            } else { setSubtotal(0) }
+                setSubtotal(newSubtotal);
+            } else { 
+                setSubtotal(0);
+            }
         }
 
-        calculateSubtotal()
-        
-
+        calculateSubtotal();  
     }, [basket])
-
-
-
 
     return (
         <>
@@ -66,8 +63,6 @@ const Basket = ( {numberOfItems, removeAllFromBasket, updateQuantityForBasketIte
             </Row>
         </Container>
         </>
-        
-        
     )
 }
 

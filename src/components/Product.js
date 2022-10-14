@@ -2,7 +2,6 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col"
 
-
 const Product = ({ product, addToBasket }) => {
     return (
         <Col className="d-flex"> 

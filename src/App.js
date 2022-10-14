@@ -10,9 +10,7 @@ import Basket from "./components/Basket";
 import Footer from "./components/Footer";
 import NavbarComponent from "./components/NavbarComponent";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 
 function App() {
   const [basket, setBasket] = useState([]);
@@ -23,9 +21,7 @@ function App() {
     const productSelectedInShop = e.target.parentElement.id;
     const productToAddToBasket = products.filter(product => product.id === Number(productSelectedInShop))[0];
 
-
     //If the product is not in the basket, add it
-
 
     if(!basket.includes(productToAddToBasket)) {
       productToAddToBasket.quantity = 1;
@@ -36,9 +32,9 @@ function App() {
       const newBasket = [...basket];
         for (let product of newBasket) {
           if (product.id === productToAddToBasket.id)
-          product.quantity++
+          product.quantity++;
       }
-      setBasket(newBasket)
+      setBasket(newBasket);
 
     }
 
@@ -46,24 +42,19 @@ function App() {
 
   function removeFromBasket(e) {
     const IDofProductSelectedInBasket = e.target.parentElement.parentElement.id;
-    setNumberOfItems(numberOfItems => numberOfItems - 1)
+    setNumberOfItems(numberOfItems => numberOfItems - 1);
     const newArrayOfBasketItems = [...basket].filter(product => product.id !== Number(IDofProductSelectedInBasket));
-    setBasket(newArrayOfBasketItems)
-
-    
+    setBasket(newArrayOfBasketItems);
   }
 
   function increaseQuantity(e) {
     const IDofProductSelectedInBasket = e.target.parentElement.parentElement.parentElement.id;
-
-
     const newBasket = [...basket];
         for (let product of newBasket) {
           if (product.id === Number(IDofProductSelectedInBasket))
-          product.quantity++
+          product.quantity++;
       }
-      setBasket(newBasket)
-
+      setBasket(newBasket);
   }
 
   function decreaseQuantity(e) {
@@ -73,13 +64,12 @@ function App() {
         for (let product of newBasket) {
           if (product.id === Number(IDofProductSelectedInBasket)) {
             if (product.quantity > 1) {
-              product.quantity--
-              setBasket(newBasket)
+              product.quantity--;
+              setBasket(newBasket);
             } else { 
-              setNumberOfItems(numberOfItems => numberOfItems - 1)
+              setNumberOfItems(numberOfItems => numberOfItems - 1); //Necessary, otherwise checkout won't display 0
               newBasket = newBasket.filter(product => product.id !== Number(IDofProductSelectedInBasket));
-              setBasket(newBasket)
-
+              setBasket(newBasket);
             }
           }
       }
@@ -87,20 +77,17 @@ function App() {
   }
 
   function updateQuantityForBasketItem(e) {
+    //This is the function for the input box in a basket item
     e.preventDefault();
+    
     const IDofProductToChange = e.target.parentElement.parentElement.id;
-    const basketItemInputField = document.getElementById(`${IDofProductToChange}input`);
-
-    if (basketItemInputField.value < 1) {
-      basketItemInputField.value = ""
-      return
-    }
-
+    const basketItemInputField = document.getElementById(`${IDofProductToChange}input`);    
     const newBasket = [...basket];
+
     for (let product of newBasket) {
       if (product.id === Number(IDofProductToChange)) {
         product.quantity = Number(basketItemInputField.value);
-        setBasket(newBasket)
+        setBasket(newBasket);
       }
     }
 
@@ -108,25 +95,26 @@ function App() {
 
   function removeAllFromBasket() {
     setBasket([]);
-    setNumberOfItems(0)
+    setNumberOfItems(0);
     }
 
 
   useEffect(() => {
+
     async function getProductsData() {
 
       if (products.length === 0) {
         try {
           const response = await fetch("https://fakestoreapi.com/products/category/electronics", {mode: "cors"});
-        const data = await response.json();
-        setProducts(products.concat(data))
+          const data = await response.json();
+          setProducts(products.concat(data))
         } catch(e) {
-          alert(e)
+          alert(e);
         } 
       }
     }
 
-    getProductsData()
+    getProductsData();
 
   }, [])
 
@@ -135,7 +123,7 @@ function App() {
 
     if (basket.length > 0) {
       const basketItemQuantity = basket.map(item => item.quantity).reduce((acc, cur) => acc + cur);
-      setNumberOfItems(basketItemQuantity)
+      setNumberOfItems(basketItemQuantity);
 
     }
   }, [basket])
@@ -158,9 +146,6 @@ function App() {
         <Footer />
       </Container>
     </BrowserRouter>
-        
-  
-
   );
 }
 

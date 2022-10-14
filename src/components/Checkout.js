@@ -1,8 +1,7 @@
 import Button from "react-bootstrap/Button";
-import CloseButton from "react-bootstrap/CloseButton"
-import {useEffect} from "react";
+import CloseButton from "react-bootstrap/CloseButton";
+import { useEffect } from "react";
 import formatThousands from "format-thousands";
-
 
 function Checkout({ numberOfItems, subtotal, displayCheckout, hideCheckout }) {
 
@@ -24,15 +23,12 @@ function Checkout({ numberOfItems, subtotal, displayCheckout, hideCheckout }) {
                 <CloseButton onClick={hideCheckout}/>
             </div>
             <div id="orderDetails" className="ms-4">
-            <p>Your order total: £{formatThousands(subtotal.toFixed(2), ",")}</p>
-            <p>Number of items: {formatThousands(numberOfItems, ",")}</p>
-            <p>Standard delivery (4-5 days): £2.99</p>
-            <p>Total: £{formatThousands((subtotal + 2.99).toFixed(2), ",")}</p>
-
+                <p>Your order total: £{formatThousands(subtotal.toFixed(2), ",")}</p>
+                <p>Number of items: {formatThousands(numberOfItems, ",")}</p>
+                <p>Standard delivery (4-5 days): £2.99</p>
+                <p>Total: £{formatThousands((subtotal + 2.99).toFixed(2), ",")}</p>
             </div>
-            
             <Button type="button" id="deliveryButton" className="btn positive-button border-0 p-3 mb-4 ms-4">Delivery options</Button>
-
         </aside>
     )
 }

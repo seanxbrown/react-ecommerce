@@ -10,7 +10,7 @@ const NavbarComponent = ({basket, numberOfItems}) => {
         <Navbar expand="lg" sticky="top" className="w-100 px-5">
             <Container fluid>
                 <Link className="navbar-brand text-light" to="/react-ecommerce">Ecommerce Site</Link>
-                <Navbar.Toggle aria-controls="basic-navbar-nav"></Navbar.Toggle>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" className="bg-light"></Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Link className="nav-link text-light" to="/react-ecommerce/about">About</Link>

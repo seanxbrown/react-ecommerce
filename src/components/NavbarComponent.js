@@ -17,7 +17,7 @@ const NavbarComponent = ({basket, numberOfItems}) => {
                         <Link className="nav-link text-light" to="/react-ecommerce/shop">Shop</Link>
                         <Link className="nav-link text-light" to="/react-ecommerce/contact">Contact</Link>
                     </Nav>
-                    <Link to="/react-ecommerce/basket" className="nav-link text-end text-light mx-4 text-decoration-none">Basket {basket.length > 0 && <Badge pill bg="info" className="text-dark ms-1">{numberOfItems}</Badge>}</Link>
+                    <Link to="/react-ecommerce/basket" className="nav-link text-end text-light mx-4 text-decoration-none"><i class="bi bi-basket text-light fs-5"></i> {basket.length > 0 && <Badge pill bg="info" className="text-dark ms-1">{numberOfItems}</Badge>}</Link>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
